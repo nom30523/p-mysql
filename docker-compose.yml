@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db:
+    build: .
+    environment: 
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - .:/root
+      - mysql-data:/var/lib/mysql
+    ports:
+      - 4306:3306
+
+volumes:
+  mysql-data:
