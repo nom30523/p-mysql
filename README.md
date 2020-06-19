@@ -109,6 +109,9 @@ select カラム名 from テーブル名;
 
 // 複数カラム
 select カラム名, カラム名 from テーブル名;
+
+// ランダムに並べ替える
+select from テーブル名 order by rand();
 ```
 
 #### テーブルにカラムを追加
@@ -134,3 +137,27 @@ alter table テーブル名 change カラム名 新カラム名 データ型;
 alter table テーブル名 rename 新テーブル名;
 ```
 
+#### データの変更
+```
+update テーブル名 set カラム名 = 変更内容 where 条件;
+```
+
+#### データの削除
+```
+// 全件
+delete from テーブル名;
+
+// 条件指定
+delete from テーブル名 where 条件;
+```
+
+#### 内部結合
+```
+select カラム名 from テーブル名 join 結合するテーブル名 on 主キー = 外部キー;
+```
+
+#### 外部結合
+```
+select * from テーブル名 left outer join 結合するテーブル名 on 主キー = 外部キー;
+select * from テーブル名 right outer join 結合するテーブル名 on 主キー = 外部キー;
+```
