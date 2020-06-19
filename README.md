@@ -161,3 +161,19 @@ select カラム名 from テーブル名 join 結合するテーブル名 on 主
 select * from テーブル名 left outer join 結合するテーブル名 on 主キー = 外部キー;
 select * from テーブル名 right outer join 結合するテーブル名 on 主キー = 外部キー;
 ```
+
+#### 外部キー制約の付与
+```
+alter table テーブル名 and constraint 外部キー制約名 foreign key (外部キー) references 親テーブル名 (主キー);
+
+// 例
+alter table comments and constraint fk_comments foreign key (post_id) references posts (id);
+```
+
+#### 外部キー削除
+```
+alter table テーブル名 drop foreign key 外部キー制約名;
+
+//例
+alter table comments drop foreign key fk_comments;
+```
